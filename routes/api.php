@@ -3,8 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 Use App\Http\Controllers\Api\UserController;
-
-app/Http/Controllers/Api/UserController.php/*
+/*
 |--------------------------------------------------------------------------
 | API Routes
 |--------------------------------------------------------------------------
@@ -15,11 +14,11 @@ app/Http/Controllers/Api/UserController.php/*
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 Route::post('/login',[UserController::class, 'login']);
-Route::post('/logout',[UserController::class,'logpot']);
+Route::post('/logout',[UserController::class,'logout']);
 
 Route::resource('/users',UserController::class);
